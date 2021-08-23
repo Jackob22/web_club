@@ -28,6 +28,12 @@ body{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  @media (max-width: $mw4) {
+    font-size: 18px;
+  }
+  @media (max-width: $mw5) {
+    font-size: 16px;
+  }
 }
 
 .header{
@@ -36,20 +42,29 @@ body{
   top: 0;
 
   .header-body {
+    position: relative;
     background: #e3e0e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $mw5) {
+      justify-content: flex-end;
+    }
   }
   .header-navbar{
     display: flex;
     height: 100%;
+    @media (max-width: $mw5) {
+      display: none;
+    }
     .navbar-item__link{
       transition: all .9s ease;
-
       color: #000;
       display: block;
       padding: 10px 20px;
+      @media (max-width: $mw4) {
+        padding: 7px 15px;
+      }
       &:hover{
         border-radius: 4px;
         background: rgba(33, 193, 155);
@@ -57,6 +72,78 @@ body{
       }
     }
   }
+
+  //BURGER
+
+  .header-menu-burger.active{
+    .burger{
+      span{
+        transform: scale(0);
+        &:first-child{
+          transform: rotate(-45deg) ; -webkit-transform: rotate(-45deg) ;
+          top: 8px;
+        }
+        &:last-child{
+          transform: rotate(45deg) ;  -webkit-transform: rotate(45deg);
+          bottom: 8px;
+        }
+      }
+    }
+    .header-navbar{
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 35px;
+      .navbar-item__link{
+        background: #e3e0e0;
+        &:hover{
+          background: rgba(33, 193, 155);
+        }
+      }
+      .header-dropdown{
+        top: -10px;
+        left: 70px;
+      }
+    }
+  }
+  .burger {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    @media (max-width: $mw5) {
+      display: block;
+    }
+    span{
+      position: absolute;
+      background-color: #000000;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 8px;
+      transition: 0.4s 0s;
+      &:first-child{
+        top: 0;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    //&:hover{
+    //  span{
+    //    background-color: rgba(241, 137, 123, 0.7);
+    //    height: 3px;
+    //    transition: background-color .3s, height .3s;
+    //  }
+    //}
+  }
+
+
   .header-logo__link{
     padding: 4px;
   }
@@ -104,6 +191,18 @@ main{
     height: 640px;
     background: url("../img/main.jpeg") center;
     background-size: cover;
+    @media (max-width: $mw4) {
+      height: 400px;
+    }
+    @media (max-width: $mw5) {
+      height: 350px;
+    }
+    @media (max-width: $mw6) {
+      height: 300px;
+    }
+  }
+  .main-history{
+    margin-bottom: 10px;
   }
   .main-history__text{
     span{
@@ -116,6 +215,12 @@ main{
     }
     font-size: 16px;
     line-height: 1.5;
+    @media (max-width: $mw5) {
+      font-size: 12px;
+      span{
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -133,18 +238,34 @@ main{
     text-align: center;
     transition: height 1000ms;
     margin: 15px 0;
+    @media (max-width: $mw4) {
+      margin: 10px 0;
+      height: 300px;
+    }
     &:nth-child(odd) {
       margin-right: 1%;
+      @media (max-width: $mw4) {
+        margin-right: 0;
+      }
     }
 
     &:nth-child(even) {
       margin-left: 1%;
+      @media (max-width: $mw4) {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: $mw4) {
+      flex-basis: 100%;
     }
   }
-
   .card.expanded {
     height: 400px;
     transition: height 1s;
+    @media (max-width: $mw4) {
+      height: 340px;
+    }
   }
   .honours-cups-text {
     clip-path: polygon(0% 100%,0% -100%,100% -100%,100% 100%);
@@ -181,6 +302,15 @@ main{
       color:  rgba(33, 193, 155);
       font-style: italic;
     }
+    @media (max-width: $mw4) {
+      padding-bottom: 0;
+    }
+    @media (max-width: $mw5) {
+      span{
+        margin-top: 5px;
+        display: block;
+      }
+    }
   }
   .honours-cups{
     display: flex;
@@ -188,16 +318,22 @@ main{
   }
 
   .honours-cups__title{
+    margin-top: 10px;
     color: #21c19b;
     text-align: center;
     font-size: 32px;
     font-weight: bold;
+    @media (max-width: $mw3) {
+      font-size: 24px;
+    }
   }
   .honours-cups__img{
     position: relative;
     width: 100%;
     height: 300px;
-
+    @media (max-width: $mw4) {
+      height: 240px;
+    }
     &.champion-league{
       background: url("../img/champion_league.jpg") center;
       background-size: cover;
@@ -211,7 +347,7 @@ main{
       background-size: cover;
     }
     &.premier-league{
-      background: url("../img/premier_league.png") center;
+      background: no-repeat url("../img/premier_league.png") center;
       background-size: cover;
     }
   }
@@ -277,6 +413,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: $mw4) {
+      flex-direction: column-reverse;
+    }
   }
   .footer-body__author{
     a{
@@ -303,6 +442,32 @@ main{
     }
     &:not(:last-child) {
       margin-right: 15px;
+    }
+  }
+  .footer-body__copy, .footer-body__author {
+    @media (max-width: $mw3) {
+      span {
+        text-align: center;
+        display: block;
+      }
+    }
+    @media (max-width: $mw4) {
+      span {
+        display: inline-block;
+      }
+    }
+
+  }
+  .footer-body__author{
+    @media (max-width: $mw4) {
+      margin: 5px 0;
+    }
+  }
+  .footer-body__copy{
+    @media (max-width: $mw6) {
+      span {
+        display: block;
+      }
     }
   }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/nullstyle.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,21 +14,29 @@
     <header class="header">
         <div class="container">
             <div class="header-body">
-                <nav class="header-navbar">
-                    <a href="index.html" class="navbar-item__link">Main</a>
-                    <div class="header-navbar-item matches">
-                        <a href="" class="navbar-item__link">Matches</a>
-                        <div class="header-dropdown">
-                            <a href="#" class="header-dropdown__link">Calendar of matches</a>
-                            <a href="#" class="header-dropdown__link">Next game</a>
-                            <a href="#" class="header-dropdown__link">Ratings</a>
-                        </div>
+                <div class="header-menu-burger" onclick="this.classList.toggle('active')">
+                    <div class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <a href="" class="navbar-item__link">News</a>
-                    <a href="fans.html" class="navbar-item__link">Fans</a>
-                    <a href="" class="navbar-item__link">Contacts</a>
-                    <a href="" class="navbar-item__link">Admin</a>
-                </nav>
+                    <nav class="header-navbar">
+                        <a href="index.html" class="navbar-item__link">Main</a>
+                        <div class="header-navbar-item matches">
+                            <a href="" class="navbar-item__link">Matches</a>
+                            <div class="header-dropdown">
+                                <a href="#" class="header-dropdown__link">Calendar of matches</a>
+                                <a href="#" class="header-dropdown__link">Next game</a>
+                                <a href="#" class="header-dropdown__link">Ratings</a>
+                            </div>
+                        </div>
+                        <a href="" class="navbar-item__link">News</a>
+                        <a href="fans.html" class="navbar-item__link">Fans</a>
+                        <a href="" class="navbar-item__link">Contacts</a>
+                        <a href="" class="navbar-item__link">Admin</a>
+                    </nav>
+                </div>
+
 
                 <a href="#" class="header-logo__link">
                     <img class="header-menu__logo" src="img/liverpool-logo.svg" alt="logo">
@@ -140,8 +149,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-body">
-                <div class="footer-body__copy">© 2021 Softserve Academy. All Rights Reserved.</div>
-                <div class="footer-body__author">made by <a href="https://github.com/bohdanst1914/web_club" target="_blank">Bohdan Krekhovetskyi</a></div>
+                <div class="footer-body__copy">
+                    <span>© 2021 SoftServe Academy.</span>
+                    <span> All Rights Reserved.</span>
+                </div>
+                <div class="footer-body__author">
+                    <span>made by</span>
+                    <a href="https://github.com/bohdanst1914/web_club" target="_blank">Bohdan Krekhovetskyi</a>
+                </div>
                 <ul class="footer-body-list">
                     <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
                         <img src="img/instagram.svg" alt="instagram">

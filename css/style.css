@@ -25,6 +25,16 @@ body {
   font-weight: bold;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    font-size: 16px;
+  }
+}
 
 .header {
   position: fixed;
@@ -32,14 +42,25 @@ body {
   top: 0;
 }
 .header .header-body {
+  position: relative;
   background: #e3e0e0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 576px) {
+  .header .header-body {
+    justify-content: flex-end;
+  }
+}
 .header .header-navbar {
   display: flex;
   height: 100%;
+}
+@media (max-width: 576px) {
+  .header .header-navbar {
+    display: none;
+  }
 }
 .header .header-navbar .navbar-item__link {
   transition: all 0.9s ease;
@@ -47,10 +68,75 @@ body {
   display: block;
   padding: 10px 20px;
 }
+@media (max-width: 768px) {
+  .header .header-navbar .navbar-item__link {
+    padding: 7px 15px;
+  }
+}
 .header .header-navbar .navbar-item__link:hover {
   border-radius: 4px;
   background: #21c19b;
   box-shadow: inset 0 0 0 3px #21c19b;
+}
+.header .header-menu-burger.active .burger span {
+  transform: scale(0);
+}
+.header .header-menu-burger.active .burger span:first-child {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  top: 8px;
+}
+.header .header-menu-burger.active .burger span:last-child {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  bottom: 8px;
+}
+.header .header-menu-burger.active .header-navbar {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 35px;
+}
+.header .header-menu-burger.active .header-navbar .navbar-item__link {
+  background: #e3e0e0;
+}
+.header .header-menu-burger.active .header-navbar .navbar-item__link:hover {
+  background: #21c19b;
+}
+.header .header-menu-burger.active .header-navbar .header-dropdown {
+  top: -10px;
+  left: 70px;
+}
+.header .burger {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 5;
+}
+@media (max-width: 576px) {
+  .header .burger {
+    display: block;
+  }
+}
+.header .burger span {
+  position: absolute;
+  background-color: #000000;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  top: 8px;
+  transition: 0.4s 0s;
+}
+.header .burger span:first-child {
+  top: 0;
+}
+.header .burger span:last-child {
+  top: auto;
+  bottom: 0;
 }
 .header .header-logo__link {
   padding: 4px;
@@ -96,6 +182,24 @@ main .main__img {
   background: url("../img/main.jpeg") center;
   background-size: cover;
 }
+@media (max-width: 768px) {
+  main .main__img {
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  main .main__img {
+    height: 350px;
+  }
+}
+@media (max-width: 375px) {
+  main .main__img {
+    height: 300px;
+  }
+}
+main .main-history {
+  margin-bottom: 10px;
+}
 main .main-history__text {
   font-size: 16px;
   line-height: 1.5;
@@ -107,6 +211,14 @@ main .main-history__text span {
   font-style: italic;
   font-size: 18px;
   font-weight: bold;
+}
+@media (max-width: 576px) {
+  main .main-history__text {
+    font-size: 12px;
+  }
+  main .main-history__text span {
+    font-size: 14px;
+  }
 }
 
 .honours .honours__item {
@@ -123,15 +235,41 @@ main .main-history__text span {
   transition: height 1000ms;
   margin: 15px 0;
 }
+@media (max-width: 768px) {
+  .honours .honours__item {
+    margin: 10px 0;
+    height: 300px;
+  }
+}
 .honours .honours__item:nth-child(odd) {
   margin-right: 1%;
+}
+@media (max-width: 768px) {
+  .honours .honours__item:nth-child(odd) {
+    margin-right: 0;
+  }
 }
 .honours .honours__item:nth-child(even) {
   margin-left: 1%;
 }
+@media (max-width: 768px) {
+  .honours .honours__item:nth-child(even) {
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .honours .honours__item {
+    flex-basis: 100%;
+  }
+}
 .honours .card.expanded {
   height: 400px;
   transition: height 1s;
+}
+@media (max-width: 768px) {
+  .honours .card.expanded {
+    height: 340px;
+  }
 }
 .honours .honours-cups-text {
   clip-path: polygon(0% 100%, 0% -100%, 100% -100%, 100% 100%);
@@ -167,20 +305,42 @@ main .main-history__text span {
   color: #21c19b;
   font-style: italic;
 }
+@media (max-width: 768px) {
+  .honours .honours__title {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 576px) {
+  .honours .honours__title span {
+    margin-top: 5px;
+    display: block;
+  }
+}
 .honours .honours-cups {
   display: flex;
   flex-wrap: wrap;
 }
 .honours .honours-cups__title {
+  margin-top: 10px;
   color: #21c19b;
   text-align: center;
   font-size: 32px;
   font-weight: bold;
 }
+@media (max-width: 992px) {
+  .honours .honours-cups__title {
+    font-size: 24px;
+  }
+}
 .honours .honours-cups__img {
   position: relative;
   width: 100%;
   height: 300px;
+}
+@media (max-width: 768px) {
+  .honours .honours-cups__img {
+    height: 240px;
+  }
 }
 .honours .honours-cups__img.champion-league {
   background: url("../img/champion_league.jpg") center;
@@ -195,7 +355,7 @@ main .main-history__text span {
   background-size: cover;
 }
 .honours .honours-cups__img.premier-league {
-  background: url("../img/premier_league.png") center;
+  background: no-repeat url("../img/premier_league.png") center;
   background-size: cover;
 }
 
@@ -260,6 +420,11 @@ main .main-history__text span {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .footer .footer-body {
+    flex-direction: column-reverse;
+  }
+}
 .footer .footer-body__author a {
   color: #21c19b;
   font-style: italic;
@@ -284,6 +449,27 @@ main .main-history__text span {
 }
 .footer .footer-body-list__item:not(:last-child) {
   margin-right: 15px;
+}
+@media (max-width: 992px) {
+  .footer .footer-body__copy span, .footer .footer-body__author span {
+    text-align: center;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-body__copy span, .footer .footer-body__author span {
+    display: inline-block;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-body__author {
+    margin: 5px 0;
+  }
+}
+@media (max-width: 375px) {
+  .footer .footer-body__copy span {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
