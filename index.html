@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main</title>
     <link rel="stylesheet" href="css/nullstyle.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="header-body">
                 <nav class="header-navbar">
-                    <a href="" class="navbar-item__link">Main</a>
+                    <a href="index.html" class="navbar-item__link">Main</a>
                     <div class="header-navbar-item matches">
                         <a href="" class="navbar-item__link">Matches</a>
                         <div class="header-dropdown">
@@ -24,16 +24,18 @@
                         </div>
                     </div>
                     <a href="" class="navbar-item__link">News</a>
+                    <a href="fans.html" class="navbar-item__link">Fans</a>
                     <a href="" class="navbar-item__link">Contacts</a>
                     <a href="" class="navbar-item__link">Admin</a>
                 </nav>
 
                 <a href="#" class="header-logo__link">
-                    <div class="header-menu__logo"></div>
+                    <img class="header-menu__logo" src="img/liverpool-logo.svg" alt="logo">
                 </a>
             </div>
         </div>
     </header>
+
     <main class="main">
         <div class="container">
             <div class="main__img"></div>
@@ -93,21 +95,42 @@
             <div class="container">
                 <div class="honours__title title">Recent victories <span>Jürgen Klopp era(2015 - now)</span></div>
                 <div class="honours-cups">
-                    <div class="honours__item">
+
+                    <div class="honours__item card" onclick="this.classList.toggle('expanded')">
                         <div class="honours-cups__img champion-league"></div>
-                        <div class="honours-cups__title">Champions League 2019</div>
+                        <div class="honours-cups-text ">
+                            <h2 class="honours-cups__title text-content">Champions League 2019</h2>
+                        </div>
+                        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30">
+                            <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
+                        </svg>
                     </div>
-                    <div class="honours__item">
+                    <div class="honours__item card" onclick="this.classList.toggle('expanded')">
                         <div class="honours-cups__img super-cup"></div>
-                        <div class="honours-cups__title">UEFA Super Cup 2019</div>
+                        <div class="honours-cups-text ">
+                            <h2 class="honours-cups__title text-content">UEFA Super Cup 2019</h2>
+                        </div>
+                        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30">
+                            <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
+                        </svg>
                     </div>
-                    <div class="honours__item">
+                    <div class="honours__item card" onclick="this.classList.toggle('expanded')">
                         <div class="honours-cups__img world-cup"></div>
-                        <div class="honours-cups__title">FIFA World Cup 2019</div>
+                        <div class="honours-cups-text ">
+                            <h2 class="honours-cups__title text-content">FIFA World Cup 2019</h2>
+                        </div>
+                        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30">
+                            <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
+                        </svg>
                     </div>
-                    <div class="honours__item">
+                    <div class="honours__item card" onclick="this.classList.toggle('expanded')">
                         <div class="honours-cups__img premier-league"></div>
-                        <div class="honours-cups__title">Premier League 2020</div>
+                        <div class="honours-cups-text ">
+                            <h2 class="honours-cups__title text-content">Premier League 2020</h2>
+                        </div>
+                        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30">
+                            <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -119,13 +142,25 @@
             <div class="footer-body">
                 <div class="footer-body__copy">© 2021 Softserve Academy. All Rights Reserved.</div>
                 <div class="footer-body__author">made by <a href="https://github.com/bohdanst1914/web_club" target="_blank">Bohdan Krekhovetskyi</a></div>
-                <div class="footer-body-links">
-                    <div class="footer-body-links__item">User Agreement</div>
-                    <div class="footer-body-links__item"> Privacy Policy</div>
-                </div>
+                <ul class="footer-body-list">
+                    <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
+                        <img src="img/instagram.svg" alt="instagram">
+                    </a></li>
+                    <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
+                        <img src="img/facebook.svg" alt="facebook">
+                    </a></li>
+                    <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
+                        <img src="img/twitter.svg" alt="twitter">
+                    </a></li>
+                    <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
+                        <img src="img/snapchat.svg" alt="snapchat">
+                    </a></li>
+                    <li class="footer-body-list__item"><a href="" class="footer-body-list__link">
+                        <img src="img/youtube.svg" alt="youtube">
+                    </a></li>
+                </ul>
             </div>
         </div>
-
     </footer>
 </body>
 </html>

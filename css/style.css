@@ -6,6 +6,17 @@ body {
   max-width: 1280px;
   margin: 0 auto;
 }
+@media (max-width: 1500px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .title {
   padding: 10px 0;
@@ -31,22 +42,22 @@ body {
   height: 100%;
 }
 .header .header-navbar .navbar-item__link {
+  transition: all 0.9s ease;
   color: #000;
   display: block;
   padding: 10px 20px;
 }
 .header .header-navbar .navbar-item__link:hover {
-  color: #21c19b;
+  border-radius: 4px;
+  background: #21c19b;
+  box-shadow: inset 0 0 0 3px #21c19b;
 }
 .header .header-logo__link {
   padding: 4px;
 }
 .header .header-menu__logo {
-  width: 34px;
-  height: 42px;
-  display: block;
-  background: no-repeat url("../img/liverpool-logo.svg");
-  background-size: cover;
+  width: 28px;
+  height: 34px;
 }
 .header .header-navbar-item.matches {
   position: relative;
@@ -75,13 +86,14 @@ body {
 }
 
 main {
+  flex: 1 1 auto;
   margin-bottom: 15px;
-  padding-top: 50px;
+  padding-top: 42px;
 }
 main .main__img {
   width: 100%;
   height: 640px;
-  background: url("../img/main.jpeg");
+  background: url("../img/main.jpeg") center;
   background-size: cover;
 }
 main .main-history__text {
@@ -97,6 +109,57 @@ main .main-history__text span {
   font-weight: bold;
 }
 
+.honours .honours__item {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.025);
+  cursor: pointer;
+  height: 360px;
+  flex-basis: 48%;
+  padding: 15px;
+  text-align: center;
+  transition: height 1000ms;
+  margin: 15px 0;
+}
+.honours .honours__item:nth-child(odd) {
+  margin-right: 1%;
+}
+.honours .honours__item:nth-child(even) {
+  margin-left: 1%;
+}
+.honours .card.expanded {
+  height: 400px;
+  transition: height 1s;
+}
+.honours .honours-cups-text {
+  clip-path: polygon(0% 100%, 0% -100%, 100% -100%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 0% -40%, 100% -40%, 100% 100%);
+  transition: clip-path 1s;
+}
+.honours .card.expanded .honours-cups-text {
+  clip-path: polygon(0% 100%, 0% -100%, 100% -100%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 0% -20%, 100% -20%, 100% 100%);
+}
+.honours .text-content {
+  transform: translateY(-160px);
+  transition: transform 1s;
+}
+.honours .card.expanded .text-content {
+  transform: translateY(0);
+}
+.honours .chevron {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 15px);
+  transform-origin: 50%;
+  transform: rotate(180deg);
+  transition: transform 1s;
+}
+.honours .card.expanded .chevron {
+  transform: rotate(0deg);
+}
 .honours .honours__title {
   border-top: 1px solid rgba(241, 137, 123, 0.7);
 }
@@ -108,17 +171,14 @@ main .main-history__text span {
   display: flex;
   flex-wrap: wrap;
 }
-.honours .honours__item {
-  padding: 10px;
-  flex-basis: 50%;
-}
 .honours .honours-cups__title {
-  margin-top: 15px;
+  color: #21c19b;
   text-align: center;
-  font-size: 18px;
+  font-size: 32px;
   font-weight: bold;
 }
 .honours .honours-cups__img {
+  position: relative;
   width: 100%;
   height: 300px;
 }
@@ -139,6 +199,57 @@ main .main-history__text span {
   background-size: cover;
 }
 
+.fans {
+  margin: 0 auto;
+  max-width: 90%;
+}
+.fans h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.fans .fan-review__text {
+  font-size: 16px;
+}
+.fans .fan-review-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.fans .fan-review__item:after {
+  content: "";
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+  border: 1px solid rgba(241, 137, 123, 0.7);
+}
+.fans .fan-review-footer {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.fans .fan-form {
+  display: flex;
+  align-items: flex-end;
+}
+.fans .fan-form .fan-form__input {
+  flex-grow: 1;
+  align-items: flex-start;
+  padding: 10px;
+  min-height: 150px;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 8px;
+  resize: none;
+}
+.fans .fan-form .fam-form__btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 20px;
+  background: rgba(33, 193, 155, 0.7);
+  border-radius: 4px;
+}
+
 .footer {
   padding-top: 10px;
 }
@@ -146,6 +257,7 @@ main .main-history__text span {
   padding: 23px 0;
   border-top: 1px solid rgba(241, 137, 123, 0.7);
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .footer .footer-body__author a {
@@ -154,10 +266,23 @@ main .main-history__text span {
   font-size: 16px;
   font-weight: bold;
 }
-.footer .footer-body-links {
+.footer .footer-body-list {
   display: flex;
 }
-.footer .footer-body-links .footer-body-links__item:not(:last-child) {
+.footer .footer-body-list__item {
+  color: #fff;
+  transition: all 0.3s;
+}
+.footer .footer-body-list__item img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
+}
+.footer .footer-body-list__item img:hover {
+  transform: scale(1.2);
+}
+.footer .footer-body-list__item:not(:last-child) {
   margin-right: 15px;
 }
 
