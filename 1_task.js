@@ -1,6 +1,7 @@
 'use strict';
 
 /* TASK 1 */
+
 const list = document.querySelector('#list'),
     items = document.querySelectorAll('li');
 
