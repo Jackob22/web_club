@@ -3,7 +3,7 @@
 const title  = document.querySelector('h1'),
     blockDivItems = document.querySelector('#myDiv').children,
     myList = document.querySelector('#myList'),
-    span = document.querySelector('span')
+    span = document.querySelector('span');
 
 title.setAttribute('style', 'background: lime');
 
