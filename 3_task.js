@@ -1,7 +1,7 @@
 'use strict';
 
-const button = document.querySelector('button')
-const container = document.querySelector('.container');
+const button = document.querySelector('button'),
+    container = document.querySelector('.container');
 
 container.style.marginTop = '15px';
 
