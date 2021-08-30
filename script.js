@@ -9,17 +9,19 @@ formButton.addEventListener('click', (event) =>{
     const dateDay = new Date().toLocaleDateString();
     const dateTime = new Date().
         toLocaleTimeString('en-GB', {hour: 'numeric',minute:'numeric'});
-    const item = document.createElement('li')
-    item.className = 'fan-review__item'
-    item.innerHTML =
-       `<p class="fan-review__text">${formText.value}</p>
+    if(formText.value){
+        const item = document.createElement('li')
+        item.className = 'fan-review__item'
+        item.innerHTML =
+            `<p class="fan-review__text">${formText.value}</p>
        <div class="fan-review-footer">
            <div class="fan-review__date">${dateDay} <span>${dateTime}</span></div>
            <div class="fan-review__author">new User</div>
        </div>
     `;
-    reviewsList.append(item);
-    formText.value = '';
+        reviewsList.append(item);
+        formText.value = '';
+    }
 })
 
 
