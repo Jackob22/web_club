@@ -1,20 +1,36 @@
 'use strict';
 
-/* TASK 1 */
+class Student {
+    constructor(fullName, direction) {
+        this.fullName = fullName;
+        this._direction = direction;
+    }
+    showFullName() {
+        return this.fullName;
+    }
+    nameIncludes(data) {
+        return this.showFullName().split(' ')[0] === data;
+    }
+    static studentBuilder(){
+       return new Student('Ihor Kohut', 'qc')
+    }
+    get direction(){
+        return this._direction;
+    }
+    set direction(value){
+        if(value.length < 2){
+            alert("direction is too short");
+            return;
+        }
+        this._direction = value;
+    }
+}
 
-const list = document.querySelector('#list'),
-    items = document.querySelectorAll('li');
+const stud1 = new Student('Ivan Petrenko', 'web')
+const stud2 = new Student('Sergiy Koval', 'python')
+const stud3 = Student.studentBuilder();
 
-// /* 1 way */
+console.log([stud1,stud2, stud3])
 
-items[0].after(items[4]);
-items[3].after(items[2]);
-
-/* 2 way */
-
-// for(let i = 1; i< items.length; i++)
-//     items[i].remove();
-// list.append(items[4]);
-// list.append(items[1]);
-// list.append(items[3]);
-// list.append(items[2]);
+console.log(stud1.nameIncludes('Ivan'));
+console.log(stud1.nameIncludes('Denysenko'));
