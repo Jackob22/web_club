@@ -1,11 +1,11 @@
 'use strict';
 
 class Worker{
+    #experience = 1.2;
     constructor(fullName, dayRate, workingDays) {
         this.fullName  = fullName;
         this.dayRate  = dayRate;
         this.workingDays  = workingDays;
-        // this.experience = 1.2;
     }
     showSalary(){
         if(Worker.counter)
@@ -14,17 +14,17 @@ class Worker{
         return this.dayRate * this.workingDays;
     }
     showSalaryWithExperience(){
-        console.log(this.fullName + ' salary: ' + this.showSalary() * Worker.experience);
-        return this.fullName + ' salary: ' + this.showSalary() * Worker.experience
+        console.log(this.fullName + ' salary: ' + this.showSalary() * this.showExp);
+        return this.fullName + ' salary: ' + this.showSalary() * this.showExp;
     }
     get showExp(){
-        return  Worker.experience;
+        return  this.#experience;
     }
     set setExp(value){
-        Worker.experience = value;
+        this.#experience = value;
     }
 }
-Worker.experience = 1.2;
+
 const worker1 = new Worker("John Johnson", 20, 23);
 const worker2 = new Worker("Tom Tomson", 48, 22);
 const worker3 = new Worker("Andy Ander", 29, 23);
